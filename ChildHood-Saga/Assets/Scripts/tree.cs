@@ -7,6 +7,7 @@ public class tree : MonoBehaviour {
     private Animator anim;
     float nextChange = 0f;
     bool canChange = true;
+    Animation animm;
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
@@ -16,8 +17,9 @@ public class tree : MonoBehaviour {
 	void Update () {
 		if(Time.time > nextChange)
         {
-            nextChange = Time.time + 15f + time;
+            nextChange = Time.time + 5f + time;
             change();
+            Debug.Log(anim.GetCurrentAnimatorStateInfo(0).length);
         }
 	}
     void change()
