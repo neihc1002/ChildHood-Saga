@@ -17,9 +17,8 @@ public class tree : MonoBehaviour {
 	void Update () {
 		if(Time.time > nextChange)
         {
-            nextChange = Time.time + 5f + time;
+            nextChange = Time.time + anim.GetCurrentAnimatorStateInfo(0).length + time;
             change();
-            Debug.Log(anim.GetCurrentAnimatorStateInfo(0).length);
         }
 	}
     void change()
